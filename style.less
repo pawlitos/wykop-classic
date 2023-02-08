@@ -1,0 +1,779 @@
+/* ==UserStyle==
+@name           Wykop Classic
+@namespace      userstyles.world/user/stasiu
+@version        1.0.6
+@description    Klasyczny styl dla strony wykop.pl
+@author         stasiu
+@preprocessor   less
+==/UserStyle== */
+
+@-moz-document domain("wykop.pl") {
+    @comments-margin-right: 40px;
+    @entry-padding: 16px;
+    @entry-padding-mobile: 8px;
+
+    /* ================= */
+    /* === Scrollbar === */
+    /* ================= */
+
+    ::-webkit-scrollbar {
+        width: auto;
+    }
+
+    /* ================== */
+    /* === Light mode === */
+    /* ================== */
+
+    body:not([data-night-mode]) {
+        /* =============================================================================== */
+        /* === Font ====================================================================== */
+        /* === This is old wykop font. Put here selectors you want this font to apply. === */
+        /* =============================================================================== */
+
+        a.username span,
+        section.search-input form > input,
+        header.header > .left > nav.main > ul li a,
+        header.header > .right > nav > ul > li,
+        aside.left-panel > section.links > .content ul li a,
+        aside.left-panel section.cta-bucket > header h4,
+        aside.left-panel section.cta-bucket > footer p,
+        aside.tag-top > .content > header > div h1,
+        section.custom-sidebar > header,
+        section.tags ul li,
+        section.link-block > section > article > header h2,
+        section.link-block > section > article section.info > p,
+        section.link-block > section > article section.info > span,
+        section.entry,
+        section.entry button,
+        section.entry-photo figure figcaption,
+        section.entry-content,
+        section.entry-content .wrapper button,
+        section.entry-voters ul,
+        section.rating-box > ul li,
+        section.rating-box > ul li.plus:before,
+        section.actions > ul > li,
+        span.comment-counter, a.comment-counter,
+        footer.footer {
+            font-family: Arial, "Liberation Sans", "Droid Sans", Tahoma, "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+        }
+
+        /* ============== */
+        /* === Button === */
+        /* ============== */
+
+        div.button .target, section.add-to-bucket-btn > button {
+            text-transform: none;
+        }
+
+        section > button {
+            color: rgb(149, 165, 166);
+            text-transform: none;
+
+            &:after {
+                background: rgb(149, 165, 166);
+            }
+        }
+
+        /* ================ */
+        /* === Username === */
+        /* ================ */
+
+        a.username span {
+            font-weight: bold;
+        }
+
+        /* ============== */
+        /* === Avatar === */
+        /* ============== */
+
+        a.avatar figure img {
+            border-radius: 2px 2px 0px 0px;
+        }
+
+        time.date {
+            color: rgb(193, 195, 196);
+        }
+
+        /* ============== */
+        /* === Header === */
+        /* ============== */
+
+        header.header {
+            > .right > nav > ul > li {
+                font-size: 13px;
+                font-weight: bold;
+            }
+
+            > .left > nav.main > ul li a {
+                font-size: 13px;
+                font-weight: bold;
+            }
+        }
+
+        /* ================== */
+        /* === Left panel === */
+        /* ================== */
+
+        aside.left-panel {
+            height: calc((var(--vh, 1vh) * 100) - 48px);
+            top: 48px;
+            margin-left: 0;
+            border-radius: 0;
+        }
+
+        aside.left-panel.mobile {
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        aside.left-panel > section.links > .content ul li a {
+            font-size: 15px;
+        }
+
+        aside.left-panel > section.links > .content ul li a > span {
+            border-radius: 3px;
+        }
+
+        /* ================ */
+        /* === Wide top === */
+        /* ================ */
+
+        main.main[data-theme="default"] > aside.wide-top {
+            margin-top: 0;
+            border-bottom: 1px solid rgb(218, 226, 228);
+            border-left: 1px solid rgb(229, 234, 236);
+            border-right: 1px solid rgb(229, 234, 236);
+        }
+
+        aside.tag-top {
+            > *+* {
+                margin-top: 0;
+            }
+
+            > figure img {
+                border-radius: 0;
+            }
+
+            > .content {
+                border-radius: 0;
+                background: rgb(248, 250, 251);
+
+                > header > div h1 {
+                    color: rgb(0, 0, 0);
+                    font-size: 24px;
+                    font-weight: normal;
+                }
+            }
+
+
+        }
+
+        /* ============== */
+        /* === Stream === */
+        /* ============== */
+
+        section.stream > .content {
+            > *+* {
+                margin-top: 10px;
+            }
+
+            > section.entry.reply:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+
+        /* ================== */
+        /* === Link block === */
+        /* ================== */
+
+        section.link-block {
+            border-radius: 3px;
+            box-shadow: none;
+            border-bottom: 1px solid rgb(218, 226, 228);
+            border-left: 1px solid rgb(229, 234, 236);
+            border-right: 1px solid rgb(229, 234, 236);
+        }
+
+        section.link-block > section > article > header h2 {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        section.link-block > section > article section.info > p {
+            color: #34495e;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 17px;
+        }
+
+        section.link-block > section > article section.info > span,
+        section.link-block > section > article section.info > span a.username span,
+        section.link-block > section > article section.info > span a.external {
+            color: #c1c3c4;
+        }
+
+        /* ============= */
+        /* === Entry === */
+        /* ============= */
+
+        section.entry {
+            border-radius: 3px;
+            box-shadow: none;
+
+            a.avatar {
+                height: 40px !important;
+                width: 40px !important;
+            }
+
+            &:not(.reply, .entry-page > .entry, .entries-sidebar .entry) {
+                border-bottom: 1px solid rgb(218, 226, 228);
+                border-left: 1px solid rgb(229, 234, 236);
+                border-right: 1px solid rgb(229, 234, 236);
+            }
+        }
+            
+        section.entry.author > article:before,
+        section.entry.link-author > article:before,
+        section.entry.own > article:before {
+            height: 100%;
+            top: 0;
+        }
+            
+        section.stream.entry-subcomments {
+            section.entry.author > article:before,
+            section.entry.link-author > article:before,
+            section.entry.own > article:before {
+                left: -@comments-margin-right - @entry-padding;
+
+                @media (max-width: 640px){
+                    left: -@comments-margin-right - @entry-padding-mobile;
+                }
+            }
+        }
+
+
+        section.entry.reply {
+            padding-right: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &:before {
+                content: none;
+            }
+        }
+
+        section.entry.reply > article {
+            padding: 0 @entry-padding;
+            margin: 0 -@entry-padding;
+
+            @media (max-width: 640px) {
+                padding: 0 @entry-padding-mobile;
+                margin: 0 -@entry-padding-mobile;
+            }
+        }
+
+        section.entry > .comments {
+            margin: 8px 0 0 @comments-margin-right;
+
+            > footer > div.button .target {
+                background: rgb(67, 131, 175);
+                border: none;
+                font-weight: normal;
+            }
+
+            > footer > div.button.small .target {
+                height: 22px;
+            }
+
+            > footer > div.button.outline .target {
+                background: none;
+                border: none;
+                color: rgb(67, 131, 175);
+                font-weight: normal;
+
+                &:hover {
+                    color: rgb(28, 80, 131);
+                }
+            }
+        }
+
+        section.entry > article:hover {
+            background: none;
+        }
+
+        /* ==================== */
+        /* === Entry header === */
+        /* ==================== */
+
+        section.entry > header > .right {
+            width: calc(100% - 40px - 10px);
+            
+            > div {
+                margin-top: 0;
+            }
+
+            > div > span {
+                color: rgb(59, 145, 95);
+            }
+        }
+
+        section.entry > article > header {
+            align-items: flex-start;
+            transform: none;
+
+            > div.left {
+                position: absolute;
+            }
+
+            > div.right {
+                align-items: center;
+                margin-left: 56px;
+                line-height: 15px;
+                width: calc(100% - 40px - 16px);
+                border-bottom: 1px solid rgb(244, 246, 247);
+
+                @media (max-width: 640px){
+                    min-height: 44px;
+                }
+            }
+            
+            > div.right > div span time {
+                color: rgb(193, 195, 196);
+
+                @media (max-width: 414px) {
+                    margin-right: 0;
+                }
+            }
+
+            > div.right > div + div {
+                margin: 0;
+
+                @media (max-width: 533px) {
+                    position: static;
+                }
+            }
+
+            > div.right > div > span {
+                display: inline;
+                color: rgb(193, 195, 196);
+            }
+
+            > div.right > div span strong {
+                color: rgb(67, 131, 175);
+                font-weight: 400;
+            }
+        }
+
+        /* ========================== */
+        /* === Entry edit wrapper === */
+        /* ========================== */
+
+        section.entry > article > header + .edit-wrapper {
+            margin-top: 3px;
+
+            @media (max-width: 640px){
+                margin-top: 10px;
+            }
+        }
+
+        section.entry > article > header + .edit-wrapper:not(:has(footer)) {
+            padding-bottom: 25px;
+        }
+
+        section.entry > article .edit-wrapper {
+            margin-left: 56px;
+
+            @media (max-width: 640px){
+                margin-left: 0px;
+            }
+
+            > * ~ * {
+                margin-top: 5px;
+            }
+
+            > .content section.alert p {
+                color: rgb(44, 62, 80);
+                font-size: 13px;
+                line-height: 17px;
+                margin-bottom: 20px;
+            }
+        }
+
+        section.entry > article .edit-wrapper footer section.actions > ul > li {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s ease, color .3s ease;
+
+            &:after {
+                background: rgb(67, 131, 175);
+            }
+
+            &.reply {
+                color: rgb(67, 131, 175);
+                font-size: 13px;
+
+                &:before {
+                    background: rgb(67, 131, 175);
+                    top: 0;
+                }
+
+                &:hover {
+                    color: var(--tuna);
+
+                    &:before {
+                        background: var(--tuna);
+                    }
+                }
+            }
+        }
+
+        section.entry:hover > article .edit-wrapper > footer section.actions ul li {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ===================== */
+        /* === Entry content === */
+        /* ===================== */
+
+        section.entry-content {
+            color: rgb(44, 62, 80);
+            font-size: 13px;
+            line-height: 17px;
+
+            .wrapper {
+                a {
+                    color: rgb(52, 152, 219);
+                }
+
+                button {
+                    background: rgb(236, 240, 241);
+                    color: rgb(52, 152, 219);
+                    padding: 1px 5px;
+                    font-size: 13px;
+                    font-weight: 400;
+                    text-transform: lowercase;
+
+                    &:hover {
+                        background: rgb(236, 240, 241);
+                        color: rgb(28, 80, 131);
+                    }
+                }
+                
+                blockquote {
+                    background: none;
+                    border-radius: 0;
+                    color: rgb(127, 140, 141);
+                    font-style: normal;
+                    letter-spacing: inherit;
+                    padding: 0 0 0 20px;
+                    
+                    &:before, &:after {
+                        content: '" ';
+                        font-size: 24px;
+                        font-style: italic;
+                        vertical-align: bottom;
+                        font-family: "Times New", Georgia, Times, serif;
+                        margin-left: -16px;
+                        line-height: 14px;
+                    }
+                    
+                    &:after {
+                        margin-left: 4px;
+                    }
+                }
+                
+                blockquote + br + blockquote {
+                    margin-top: 0 !important;
+                }
+            }
+        }
+
+        section.entry.detailed > article .edit-wrapper > .content > section.entry-content {
+            font-size: 13px;
+            line-height: 17px;
+        }
+
+        /* =================== */
+        /* === Entry photo === */
+        /* =================== */
+
+        section.entry-photo figure {
+            border-radius: 0;
+            border: none;
+            padding: 0 0 28px 0;
+
+            img {
+                border-radius: 0;
+            }
+
+            figcaption {
+                background: inherit;
+                padding: 0;
+                font-size: 11px;
+                color: rgb(149, 165, 166);
+                line-height: 20px;
+            }
+        }
+
+        /* =================== */
+        /* === Entry embed === */
+        /* =================== */
+
+        section.embed-ghost {
+            border-radius: 0;
+            border: none;
+            padding: 0;
+
+            figure {
+                border-radius: 0;
+            }
+        }
+
+        /* ============== */
+        /* === Survey === */
+        /* ============== */
+
+        @survey-padding-vertical: 8px;
+        @survey-padding-horizontal: 5px;
+        @survey-padding-double: @survey-padding-horizontal * 2;
+
+        section.survey {
+            padding: @survey-padding-vertical @survey-padding-horizontal;
+            border: none;
+            border-radius: 0;
+        }
+
+        section.survey > .content {
+            margin: 10px 0;
+            padding: 10px 0;
+
+            &:before, &:after {
+                width: calc(100% + @survey-padding-double);
+                left: -@survey-padding-horizontal;
+            }
+        }
+
+        section.survey > header h4 {
+            color: rgb(120, 141, 162);
+            font-size: 11px;
+            font-weight: bold;
+            line-height: 13px;
+            text-transform: uppercase;
+        }
+
+        section.survey > .content ul li {
+            color: rgb(44, 62, 80);
+            font-size: 11px;
+
+            &.voted > span {
+                font-weight: bold;
+            }
+        }
+
+        section.survey > footer p {
+            color: rgb(149, 165, 166);
+            font-size: 11px;
+        }
+
+        /* ==================== */
+        /* === Entry voters === */
+        /* ==================== */
+
+        section.entry-voters ul {
+            font-size: 11px;
+            color: rgb(149, 165, 166);
+
+            &:before {
+                content: "+:";
+                color: rgb(44, 62, 80);
+                line-height: 18px;
+            }
+
+            li {
+                &.more {
+                    font-weight: 400;
+                    text-transform: none;
+                }
+
+                a.username span {
+                    color: rgb(149, 165, 166);
+                    font-weight: 400;
+                }
+            }
+        }
+
+        /* ============== */
+        /* === Rating === */
+        /* ============== */
+
+        section.rating-box {
+            > ul li {
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 21px;
+                color: rgb(192, 57, 43);
+
+                &.zero:not(separated) {
+                    color: rgb(44, 62, 80);
+                }
+
+                &.plus {
+                    color: rgb(59, 145, 95);
+
+                    &:before {
+                        content: "+";
+                    }
+                }
+            }
+
+            /* ========================== */
+            /* === Rating button plus === */
+            /* ========================== */
+
+            .buttons button.plus {
+                border-color: rgb(244, 246, 247);
+                background: rgb(244, 246, 247);
+
+                &:hover {
+                    border-color: rgb(59, 145, 95);
+                    background: rgb(59, 145, 95);
+
+                    &:after {
+                        background: rgb(255, 255, 255);
+                    }
+                }
+
+                &:after {
+                    background: rgb(59, 145, 95);
+                }
+            }
+
+            .buttons button.plus.voted {
+                background: rgb(59, 145, 95);
+                border-color: rgb(59, 145, 95);
+
+                &:after {
+                    background: rgb(255, 255, 255);
+                }
+            }
+
+            .buttons button.plus:hover.voted {
+                background: rgb(59, 145, 95);
+
+                &:after {
+                    background: rgb(255, 255, 255);
+                }
+            }
+
+            /* =========================== */
+            /* === Rating button minus === */
+            /* =========================== */
+
+            .buttons button.minus {
+                border-color: rgb(244, 246, 247);
+                background: rgb(244, 246, 247);
+
+                &:hover {
+                    border-color: rgb(192, 57, 43);
+                    background: rgb(192, 57, 43);
+
+                    &:after {
+                        background: rgb(255, 255, 255);
+                    }
+                }
+
+                &:after {
+                    background: rgb(192, 57, 43);
+                }
+            }
+
+            .buttons button.minus.voted {
+                background: rgb(192, 57, 43);
+                border-color: rgb(192, 57, 43);
+
+                &:after {
+                    background: rgb(255, 255, 255);
+                }
+            }
+
+            .buttons button.minus:hover.voted {
+                background: rgb(192, 57, 43);
+
+                &:after {
+                    background: rgb(255, 255, 255);
+                }
+            }
+        }
+
+        /* ======================== */
+        /* === Comments counter === */
+        /* ======================== */
+
+        span.comment-counter, a.comment-counter {
+            color: rgb(67, 131, 175);
+            font-size: 13px;
+
+            &:before {
+                background: rgb(67, 131, 175);
+                width: 17px;
+                height: 18.75px;
+                -webkit-mask-size: 17px 18.75px;
+                mask-size: 17px 18.75px;
+            }
+        }
+
+        button.toggle-to-favourite .svg-inline svg {
+            width: 19px;
+            height: 18px;
+
+            .border {
+                fill: rgb(67, 131, 175);
+            }
+        }
+
+        ul.dropdown:not(.clear-styles).icon>li span[data-v-1635e6b9]:before {
+            background: rgb(67, 131, 175);
+        }
+
+        /* ========== ==== */
+        /* === Sidebar === */
+        /* =========== === */
+
+        section.custom-sidebar {
+            border-radius: 3px;
+            border-bottom: 1px solid #dae2e4;
+            border-left: 1px solid #e5eaec;
+            border-right: 1px solid #e5eaec;
+            
+            > header h4 {
+                font-size: 11px;
+            }
+        }
+
+        section.tags ul li {
+            font-size: 13px;
+        }
+
+        /* ============== */
+        /* === Footer === */
+        /* ============== */
+
+        footer.footer {
+            border-radius: 3px;
+            border-bottom: 1px solid #dae2e4;
+            border-left: 1px solid #e5eaec;
+            border-right: 1px solid #e5eaec;
+            
+            > nav ul li {
+                font-size: 13px;
+            }
+            
+            p {
+                font-size: 11px;
+            }
+        }
+    }
+}
