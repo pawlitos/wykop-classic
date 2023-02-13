@@ -7,6 +7,11 @@ W ramach tego stylu będę starał się przywrócić jak najwięcej wyglądu ze 
 
 ## Changelog
 
+### 1.0.6
+
+- zmodyfikowane styl wykopaliska
+- przeniesiono obrazek wykopaliska na lewą stronę i usunięto zaokrąglenie
+
 ### 1.0.5
 
 - zmiana wyglądu ankiety
