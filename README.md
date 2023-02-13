@@ -7,6 +7,11 @@ W ramach tego stylu będę starał się przywrócić jak najwięcej wyglądu ze 
 
 ## Changelog
 
+### 1.0.7
+
+- naprawiono odstępy w szczegółowym widoku wykopaliska
+- zmiany w czcionce szczegółowego widoku wykopaliska
+
 ### 1.0.6
 
 - zmodyfikowane styl wykopaliska
