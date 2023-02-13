@@ -11,6 +11,7 @@
     @comments-margin-right: 40px;
     @entry-padding: 16px;
     @entry-padding-mobile: 8px;
+    @link-block-article-padding-top: 16px;
 
     /* ================= */
     /* === Scrollbar === */
@@ -52,6 +53,7 @@
         section.rating-box > ul li,
         section.rating-box > ul li.plus:before,
         section.actions > ul > li,
+        section.vote-box .dig button,
         span.comment-counter, a.comment-counter,
         footer.footer {
             font-family: Arial, "Liberation Sans", "Droid Sans", Tahoma, "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
@@ -193,6 +195,74 @@
             border-bottom: 1px solid rgb(218, 226, 228);
             border-left: 1px solid rgb(229, 234, 236);
             border-right: 1px solid rgb(229, 234, 236);
+            
+            a.comment-counter {
+                color: #c1c3c4;
+                
+                &:before {
+                    background: #c1c3c4;
+                }
+                
+                &:after {
+                    content: " komentarzy";
+                    white-space: pre;
+                }
+            }
+            
+            section.actions > ul > li.tag {
+                color: #c1c3c4;
+            }
+            
+            section.actions > ul > li:not(.tag):after {
+                background: #c1c3c4;
+            }
+            
+            section.actions > ul > li.tag > span {
+                opacity: .5;
+            }
+        }
+        
+        section.link-block:hover {
+            a.comment-counter {
+                color: #4383af;
+                
+                &:before {
+                    background: #4383af;
+                }
+                
+                &:hover {
+                    color: var(--tuna);
+
+                    &:before {
+                        background: var(--tuna);
+                    }
+                }
+            }
+            
+            section.actions > ul > li.tag {
+                color: #4383af;
+            }
+            
+            section.actions > ul > li:not(.tag):after {
+                background: #4383af;
+            }
+        }
+        
+        section.link-block > section {
+            min-height: 175px;
+        }
+        
+        section.link-block > section > article {
+            padding: @link-block-article-padding-top 16px 17px 236px;
+        }
+        
+        section.link-block > section > article figure {
+            top: @link-block-article-padding-top;
+            left: 0;
+        }
+        
+        section.link-block > section > article > header {
+            margin-top: 0;
         }
 
         section.link-block > section > article > header h2 {
@@ -212,6 +282,31 @@
         section.link-block > section > article section.info > span a.username span,
         section.link-block > section > article section.info > span a.external {
             color: #c1c3c4;
+        }
+        
+        section.link-block {
+            section.vote-box .dig {
+                opacity: initial;
+
+                button {
+                    border: 1px solid #3b6f92;
+                    text-transform: lowercase;
+                    font-weight: normal;
+                    font-size: 11px;
+                    line-height: 20px;
+                    padding: 0;
+                    width: 49px;
+                }
+
+                &:hover button {
+                    background-color: #4b8bb7;
+                }
+            }
+
+            section.vote-box.mobile .dig button {
+                padding: 0;
+                width: 49px;
+            }
         }
 
         /* ============= */
