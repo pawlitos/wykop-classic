@@ -188,6 +188,40 @@
             }
         }
 
+        /* ================ */
+        /* === Vote Box === */
+        /* ================ */
+
+        section.vote-box .dig {
+            button {
+                border: 1px solid #3b6f92;
+                text-transform: lowercase;
+                font-weight: normal;
+                font-size: 11px;
+                line-height: 20px;
+                padding: 0;
+                width: 49px;
+            }
+
+            &:hover {
+                opacity: initial;
+
+                button {
+                    background-color: #4b8bb7;
+                }
+            }
+        }
+
+        section.vote-box .dig p span {
+            font-size: 13px;
+            line-height: 34px;
+        }
+
+        section.vote-box.mobile .dig button {
+            padding: 0;
+            width: 49px;
+        }
+
         /* ================== */
         /* === Link block === */
         /* ================== */
@@ -286,36 +320,6 @@
         section.link-block > section > article section.info > span a.username span,
         section.link-block > section > article section.info > span a.external {
             color: #c1c3c4;
-        }
-        
-        section.link-block {
-            section.vote-box .dig {
-                opacity: initial;
-
-                button {
-                    border: 1px solid #3b6f92;
-                    text-transform: lowercase;
-                    font-weight: normal;
-                    font-size: 11px;
-                    line-height: 20px;
-                    padding: 0;
-                    width: 49px;
-                }
-
-                &:hover button {
-                    background-color: #4b8bb7;
-                }
-            }
-
-            section.vote-box .dig p span {
-                font-size: 13px;
-                line-height: 34px;
-            }
-
-            section.vote-box.mobile .dig button {
-                padding: 0;
-                width: 49px;
-            }
         }
         
         section.link-block.detailed > section > article {
