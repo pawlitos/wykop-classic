@@ -7,6 +7,12 @@ W ramach tego stylu będę starał się przywrócić jak najwięcej wyglądu ze 
 
 ## Changelog
 
+### 1.0.8
+
+- usunięto odstępy i margines w mobilnym widoku nawigacji
+- naprawiono szczegółowy widok wykopaliska bez miniatury
+- naprawiono odstępy szczegółowego widoku wykopaliska na różnych szerokościach ekranu
+
 ### 1.0.7
 
 - naprawiono odstępy w szczegółowym widoku wykopaliska
