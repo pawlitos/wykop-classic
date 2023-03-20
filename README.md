@@ -7,6 +7,10 @@ W ramach tego stylu będę starał się przywrócić jak najwięcej wyglądu ze 
 
 ## Changelog
 
+### 1.0.9
+
+- dodano pierwsze zmiany w trybie nocnym
+
 ### 1.0.8
 
 - usunięto odstępy i margines w mobilnym widoku nawigacji
