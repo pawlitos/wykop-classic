@@ -12,6 +12,24 @@
     @entry-padding: 16px;
     @entry-padding-mobile: 8px;
     @link-block-article-padding-top: 16px;
+    @survey-padding-vertical: 8px;
+    @survey-padding-horizontal: 5px;
+    @survey-padding-double: @survey-padding-horizontal * 2;
+
+    /* =============================================================================== */
+    /* === Font ====================================================================== */
+    /* === This is old wykop font. Put here selectors you want this font to apply. === */
+    /* =============================================================================== */
+
+    section.search-input form > input,
+    header.header > .left > nav.main > ul li a,
+    header.header > .right > nav > ul > li,
+    aside.left-panel,
+    aside.tag-top > .content > header > div h1 {
+        font-family: Arial, "Liberation Sans", "Droid Sans", Tahoma, "Lucida Sans",
+        "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Verdana,
+        Helvetica, sans-serif;
+    }
 
     /* ================= */
     /* === Scrollbar === */
@@ -19,6 +37,94 @@
 
     ::-webkit-scrollbar {
         width: auto;
+    }
+
+    /* ============== */
+    /* === Header === */
+    /* ============== */
+
+    header.header > .right > nav > ul > li,
+    header.header > .left > nav.main > ul li a {
+        font-size: 13px !important;
+        font-weight: bold !important;
+    }
+
+    /* ================== */
+    /* === Left panel === */
+    /* ================== */
+
+    body[data-night-mode],
+    body:not([data-night-mode]) {
+        aside.left-panel {
+            height: calc((var(--vh, 1vh) * 100) - 48px);
+            top: 48px;
+            margin-left: 0;
+            border-radius: 0;
+        }
+
+        aside.left-panel.mobile {
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        aside.left-panel > section.links > .content ul li a {
+            font-size: 15px;
+        }
+
+        aside.left-panel > section.links > .content ul li a > span {
+            border-radius: 3px;
+        }
+
+        aside.left-panel > footer {
+            border-radius: 0;
+            top: calc(100% - 40px);
+        }
+    }
+
+    /* ================ */
+    /* === Wide top === */
+    /* ================ */
+
+    main.main > aside.tag-top.wide-top {
+        margin-top: 0;
+    }
+
+    aside.tag-top > * + * {
+        margin-top: 0 !important;
+    }
+
+    aside.tag-top > figure img {
+        border-radius: 0 !important;
+    }
+
+    aside.tag-top > .content {
+        border-radius: 0 !important;
+    }
+
+    aside.tag-top > .content > header > div h1 {
+        font-size: 24px !important;
+        font-weight: normal !important;
+    }
+
+    /* ============== */
+    /* === Stream === */
+    /* ============== */
+
+    section.stream > .content > * + * {
+        margin-top: 10px !important;
+    }
+
+    section.stream > .content > section.entry.reply:not(:first-child) {
+        margin-top: 8px !important;
+    }
+
+    /* ============== */
+    /* === Avatar === */
+    /* ============== */
+
+    a.avatar figure img {
+        border-radius: 2px 2px 0px 0px !important;
     }
 
     /* ================== */
@@ -32,11 +138,6 @@
         /* =============================================================================== */
 
         a.username span,
-        section.search-input form > input,
-        header.header > .left > nav.main > ul li a,
-        header.header > .right > nav > ul > li,
-        aside.left-panel,
-        aside.tag-top > .content > header > div h1,
         section.custom-sidebar > header,
         section.tags ul li,
         section.link-block > section > article > header h2,
@@ -87,103 +188,26 @@
             font-weight: bold;
         }
 
-        /* ============== */
-        /* === Avatar === */
-        /* ============== */
-
-        a.avatar figure img {
-            border-radius: 2px 2px 0px 0px;
-        }
-
         time.date {
             color: rgb(193, 195, 196);
-        }
-
-        /* ============== */
-        /* === Header === */
-        /* ============== */
-
-        header.header {
-            > .right > nav > ul > li {
-                font-size: 13px;
-                font-weight: bold;
-            }
-
-            > .left > nav.main > ul li a {
-                font-size: 13px;
-                font-weight: bold;
-            }
-        }
-
-        /* ================== */
-        /* === Left panel === */
-        /* ================== */
-
-        aside.left-panel {
-            height: calc((var(--vh, 1vh) * 100) - 48px);
-            top: 48px;
-            margin-left: 0;
-            border-radius: 0;
-        }
-
-        aside.left-panel.mobile {
-            top: 0;
-            bottom: 0;
-            left: 0;
-        }
-
-        aside.left-panel > section.links > .content ul li a {
-            font-size: 15px;
-        }
-
-        aside.left-panel > section.links > .content ul li a > span {
-            border-radius: 3px;
         }
 
         /* ================ */
         /* === Wide top === */
         /* ================ */
 
-        main.main[data-theme="default"] > aside.tag-top.wide-top {
-            margin-top: 0;
+        main.main > aside.tag-top.wide-top {
             border-bottom: 1px solid rgb(218, 226, 228);
             border-left: 1px solid rgb(229, 234, 236);
             border-right: 1px solid rgb(229, 234, 236);
         }
 
-        aside.tag-top {
-            > * + * {
-                margin-top: 0;
-            }
-
-            > figure img {
-                border-radius: 0;
-            }
-
-            > .content {
-                border-radius: 0;
-                background: rgb(248, 250, 251);
-
-                > header > div h1 {
-                    color: rgb(0, 0, 0);
-                    font-size: 24px;
-                    font-weight: normal;
-                }
-            }
+        aside.tag-top > .content {
+            background: rgb(248, 250, 251);
         }
 
-        /* ============== */
-        /* === Stream === */
-        /* ============== */
-
-        section.stream > .content {
-            > * + * {
-                margin-top: 10px;
-            }
-
-            > section.entry.reply:not(:first-child) {
-                margin-top: 8px;
-            }
+        aside.tag-top > .content > header > div h1 {
+            color: rgb(0, 0, 0);
         }
 
         /* ================ */
@@ -701,10 +725,6 @@
         /* ============== */
         /* === Survey === */
         /* ============== */
-
-        @survey-padding-vertical: 8px;
-        @survey-padding-horizontal: 5px;
-        @survey-padding-double: @survey-padding-horizontal * 2;
 
         section.survey {
             padding: @survey-padding-vertical @survey-padding-horizontal;
