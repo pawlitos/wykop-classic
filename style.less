@@ -277,7 +277,7 @@
             }
             
             section.actions > ul > li.tag > span {
-                opacity: .5;
+                opacity: 0.5;
             }
         }
         
@@ -437,12 +437,11 @@
             section.entry.own > article:before {
                 left: -@comments-margin-right - @entry-padding;
 
-                @media (max-width: 640px){
+                @media (max-width: 640px) {
                     left: -@comments-margin-right - @entry-padding-mobile;
                 }
             }
         }
-
 
         section.entry.reply {
             padding-right: 0;
@@ -524,7 +523,7 @@
                 width: calc(100% - 40px - 16px);
                 border-bottom: 1px solid rgb(244, 246, 247);
 
-                @media (max-width: 640px){
+                @media (max-width: 640px) {
                     min-height: 44px;
                 }
             }
@@ -563,7 +562,7 @@
         section.entry > article > header + .edit-wrapper {
             margin-top: 3px;
 
-            @media (max-width: 640px){
+            @media (max-width: 640px) {
                 margin-top: 10px;
             }
         }
@@ -575,7 +574,7 @@
         section.entry > article .edit-wrapper {
             margin-left: 56px;
 
-            @media (max-width: 640px){
+            @media (max-width: 640px) {
                 margin-left: 0px;
             }
 
@@ -594,7 +593,7 @@
         section.entry > article .edit-wrapper footer section.actions > ul > li {
             opacity: 0;
             pointer-events: none;
-            transition: opacity .3s ease, color .3s ease;
+            transition: opacity 0.3s ease, color 0.3s ease;
 
             &:after {
                 background: rgb(67, 131, 175);
@@ -920,7 +919,7 @@
             }
         }
 
-        ul.dropdown:not(.clear-styles).icon>li span[data-v-1635e6b9]:before {
+        ul.dropdown:not(.clear-styles).icon > li span[data-v-1635e6b9]:before {
             background: rgb(67, 131, 175);
         }
 
