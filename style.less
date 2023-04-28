@@ -25,7 +25,13 @@
     header.header > .left > nav.main > ul li a,
     header.header > .right > nav > ul > li,
     aside.left-panel,
-    aside.tag-top > .content > header > div h1 {
+    aside.tag-top > .content > header > div h1,
+    section.vote-box,
+    section.vote-box .dig button,
+    section.link-block > section > article > header h2,
+    section.link-block > section > article section.info > p,
+    section.link-block > section > article section.info > span,
+    section.link-block.detailed button.toggle-to-favourite {
         font-family: Arial, "Liberation Sans", "Droid Sans", Tahoma, "Lucida Sans",
         "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Verdana,
         Helvetica, sans-serif;
@@ -107,6 +113,24 @@
         font-weight: normal !important;
     }
 
+    /* ================ */
+    /* === Vote Box === */
+    /* ================ */
+
+    section.vote-box .dig button {
+        text-transform: lowercase !important;
+        font-weight: normal !important;
+        font-size: 11px !important;
+        line-height: 20px;
+        padding: 0 !important;
+        width: 49px !important;
+    }
+
+    section.vote-box .dig p span {
+        font-size: 13px !important;
+        line-height: 34px !important;
+    }
+
     /* ============== */
     /* === Stream === */
     /* ============== */
@@ -128,6 +152,85 @@
     }
 
     /* ================== */
+    /* === Link block === */
+    /* ================== */
+
+    section.link-block {
+        border-radius: 3px !important;
+
+        a.comment-counter {
+            &:after {
+                content: " komentarzy";
+                white-space: pre;
+            }
+        }
+    }
+
+    section.link-block > section {
+        min-height: 175px !important;
+    }
+
+    section.link-block > section > article {
+        padding: @link-block-article-padding-top 16px 17px 236px !important;
+    }
+
+    section.link-block > section > article figure {
+        border-radius: 0 !important;
+        top: @link-block-article-padding-top !important;
+        left: 0 !important;
+    }
+
+    section.link-block > section > article > header {
+        margin-top: 0 !important;
+    }
+
+    section.link-block.detailed > section > article {
+        padding-left: 316px !important;
+        padding-right: 16px !important;
+    }
+
+    section.link-block.detailed.mobile > section > article {
+        padding: 0 8px 8px 8px !important;
+    }
+
+    body > section.is-mobile section.link-block.detailed:not(.no-thumbnail):not(.mobile) > section > article {
+        padding-left: 236px !important;
+        padding-right: 16px !important;
+
+        @media (max-width: 767px) {
+            padding-left: 146px !important;
+        }
+
+        @media (max-width: 896px) and (min-width: 768px) {
+            padding-left: 236px !important;
+        }
+
+        @media (max-width: 1024px) and (min-width: 897px) {
+            padding-left: 316px !important;
+        }
+
+        @media (max-width: 1140px) and (min-width: 1025px) {
+            padding-left: 146px !important;
+        }
+    }
+
+    body > section.open-left-panel:not(.is-mobile) section.link-block.detailed:not(.no-thumbnail) > section > article {
+        @media (max-width: 1350px) {
+            padding-left: 146px !important;
+            padding-right: 16px !important;
+        }
+
+        @media (max-width: 1440px) and (min-width: 1351px) {
+            padding-left: 236px !important;
+            padding-right: 16px !important;
+        }
+    }
+
+    section.link-block.detailed.no-thumbnail > section > article {
+        padding-left: 0 !important;
+    }
+
+    /* ================== */
     /* === Light mode === */
     /* ================== */
 
@@ -140,10 +243,6 @@
         a.username span,
         section.custom-sidebar > header,
         section.tags ul li,
-        section.link-block > section > article > header h2,
-        section.link-block > section > article section.info > p,
-        section.link-block > section > article section.info > span,
-        section.link-block.detailed button.toggle-to-favourite,
         section.entry,
         section.entry button,
         section.entry-photo figure figcaption,
@@ -153,8 +252,6 @@
         section.rating-box > ul li,
         section.rating-box > ul li.plus:before,
         section.actions > ul > li,
-        section.vote-box,
-        section.vote-box .dig button,
         span.comment-counter,
         a.comment-counter,
         footer.footer {
@@ -217,12 +314,6 @@
         section.vote-box .dig {
             button {
                 border: 1px solid #3b6f92;
-                text-transform: lowercase;
-                font-weight: normal;
-                font-size: 11px;
-                line-height: 20px;
-                padding: 0;
-                width: 49px;
             }
 
             &:hover {
@@ -234,22 +325,11 @@
             }
         }
 
-        section.vote-box .dig p span {
-            font-size: 13px;
-            line-height: 34px;
-        }
-
-        section.vote-box.mobile .dig button {
-            padding: 0;
-            width: 49px;
-        }
-
         /* ================== */
         /* === Link block === */
         /* ================== */
 
         section.link-block {
-            border-radius: 3px;
             box-shadow: none;
             border-bottom: 1px solid rgb(218, 226, 228);
             border-left: 1px solid rgb(229, 234, 236);
@@ -260,11 +340,6 @@
                 
                 &:before {
                     background: #c1c3c4;
-                }
-                
-                &:after {
-                    content: " komentarzy";
-                    white-space: pre;
                 }
             }
             
@@ -306,24 +381,6 @@
                 background: #4383af;
             }
         }
-        
-        section.link-block > section {
-            min-height: 175px;
-        }
-        
-        section.link-block > section > article {
-            padding: @link-block-article-padding-top 16px 17px 236px;
-        }
-        
-        section.link-block > section > article figure {
-            border-radius: 0;
-            top: @link-block-article-padding-top;
-            left: 0;
-        }
-        
-        section.link-block > section > article > header {
-            margin-top: 0;
-        }
 
         section.link-block > section > article > header h2 {
             font-size: 16px;
@@ -344,11 +401,6 @@
             color: #c1c3c4;
         }
         
-        section.link-block.detailed > section > article {
-            padding-left: 316px;
-            padding-right: 16px;
-        }
-        
         section.link-block.detailed button.toggle-to-favourite {
             > span {
                 color: #4383af;
@@ -357,43 +409,6 @@
             &:hover > span {
                 color: var(--tuna);
             }
-        }
-
-        > section.is-mobile section.link-block.detailed:not(.no-thumbnail):not(.mobile) > section > article {
-            padding-left: 236px;
-            padding-right: 16px;
-
-            @media (max-width: 767px) {
-                padding-left: 146px;
-            }
-
-            @media (max-width: 896px) and (min-width: 768px) {
-                padding-left: 236px;
-            }
-
-            @media (max-width: 1024px) and (min-width: 897px) {
-                padding-left: 316px;
-            }
-
-            @media (max-width: 1140px) and (min-width: 1025px) {
-                padding-left: 146px;
-            }
-        }
-
-        > section.open-left-panel:not(.is-mobile) section.link-block.detailed:not(.no-thumbnail) > section > article {
-            @media (max-width: 1350px) {
-                padding-left: 146px;
-                padding-right: 16px;
-            }
-
-            @media (max-width: 1440px) and (min-width: 1351px) {
-                padding-left: 236px;
-                padding-right: 16px;
-            }
-        }
-
-        section.link-block.detailed.no-thumbnail > section > article {
-            padding-left: 0;
         }
 
         /* ============== */
