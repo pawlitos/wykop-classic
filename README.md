@@ -7,6 +7,12 @@ W ramach tego stylu będę starał się przywrócić jak najwięcej wyglądu ze 
 
 ## Changelog
 
+### 1.1.0
+
+- poprawiono widok wykopaliska w trybie nocnym
+- poprawiono szczegółowy widok wykopaliska w trybie nocnym
+- poprawiono przycisk do głosowania w trybie nocnym
+
 ### 1.0.9
 
 - dodano pierwsze zmiany w trybie nocnym
